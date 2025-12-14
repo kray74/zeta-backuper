@@ -1,0 +1,11 @@
+[Unit]
+Description=Copy backups of the %i server to the cloud
+
+[Service]
+Type=oneshot
+Environment=RESTIC_REPOSITORY=rclone:yandex:backup/%i
+Environment=RESTIC_PASSWORD_FILE=%E/credstore/backup_%i_repo_password
+Environment=RESTIC_FROM_REPOSITORY=/mnt/external/backup/%i
+Environment=RESTIC_FROM_PASSWORD_FILE=%E/credstore/backup_%i_repo_password
+ExecStart=restic copy
+ExecStart=restic check

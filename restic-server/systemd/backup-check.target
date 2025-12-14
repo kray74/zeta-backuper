@@ -1,0 +1,4 @@
+[Unit]
+Description=check restic repositories
+Wants=backup-check@alpha.service
+Wants=backup-check@zeta.service

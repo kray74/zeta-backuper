@@ -1,0 +1,8 @@
+[Unit]
+Description=check %i restic repository
+
+[Service]
+Type=oneshot
+Environment=RESTIC_REPOSITORY=/mnt/external/backup/%i
+Environment=RESTIC_PASSWORD_FILE=%E/credstore/backup_%i_repo_password
+ExecStart=restic check

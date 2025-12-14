@@ -1,0 +1,4 @@
+[Unit]
+Description=Copy backups to the cloud
+Wants=backup-cloud-copy@alpha.service
+Wants=backup-cloud-copy@zeta.service

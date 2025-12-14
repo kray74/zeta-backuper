@@ -1,0 +1,8 @@
+[Unit]
+Description=Periodically backup samba
+
+[Timer]
+OnCalendar=02:15
+
+[Install]
+WantedBy=timers.target

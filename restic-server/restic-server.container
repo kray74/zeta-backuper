@@ -1,0 +1,15 @@
+[Unit]
+Description=backup REST server
+
+[Service]
+Restart=always
+
+[Container]
+Image=docker.io/restic/rest-server:0.14.0
+ContainerName=restic-server
+Volume=/mnt/external/backup/:/data/:z
+Environment=OPTIONS=--append-only --private-repos
+PublishPort=14000:8000
+
+[Install]
+WantedBy=default.target

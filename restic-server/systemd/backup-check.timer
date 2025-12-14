@@ -1,0 +1,9 @@
+[Unit]
+Description=check restic repositories
+
+[Timer]
+OnCalendar=05:00
+Unit=backup-check.target
+
+[Install]
+WantedBy=timers.target

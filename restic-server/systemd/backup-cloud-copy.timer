@@ -1,0 +1,9 @@
+[Unit]
+Description=Copy backups to the cloud
+
+[Timer]
+OnCalendar=05:25
+Unit=backup-cloud-copy.target
+
+[Install]
+WantedBy=timers.target

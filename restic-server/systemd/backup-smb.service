@@ -1,0 +1,13 @@
+[Unit]
+Description=Backup samba
+
+[Service]
+Type=oneshot
+Environment=RESTIC_REPOSITORY=/mnt/external/backup/zeta
+#TODO: use systemd credentials on systemd 258+
+#LoadCredentialEncrypted=backup_zeta_repo_password
+#Environment=RESTIC_PASSWORD_FILE=%d/restic_repo_password
+Environment=RESTIC_PASSWORD_FILE=%E/credstore/backup_zeta_repo_password
+
+ExecStart=restic backup --no-scan /srv/smb/public
+ExecStart=restic backup --no-scan /srv/smb/sync

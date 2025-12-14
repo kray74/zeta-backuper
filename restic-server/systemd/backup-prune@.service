@@ -1,0 +1,8 @@
+[Unit]
+Description=Remove %i old backups
+
+[Service]
+Type=oneshot
+Environment=RESTIC_REPOSITORY=/mnt/external/backup/%i
+Environment=RESTIC_PASSWORD_FILE=%E/credstore/backup_%i_repo_password
+ExecStart=restic forget --prune --keep-within-monthly=3m --keep-within-daily=7d

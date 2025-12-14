@@ -1,0 +1,9 @@
+[Unit]
+Description=Remove old cloud backups
+
+[Timer]
+OnCalendar=Sat 06:00
+Unit=backup-cloud-prune.target
+
+[Install]
+WantedBy=timers.target

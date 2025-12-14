@@ -1,0 +1,9 @@
+[Unit]
+Description=Remove old backups
+
+[Timer]
+OnCalendar=Sat 05:15
+Unit=backup-prune.target
+
+[Install]
+WantedBy=timers.target

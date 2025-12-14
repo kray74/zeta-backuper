@@ -1,0 +1,9 @@
+[Unit]
+Description=Remove %i old cloud backups
+
+[Service]
+Type=oneshot
+Environment=RESTIC_REPOSITORY=rclone:yandex:backup/%i
+Environment=RESTIC_PASSWORD_FILE=%E/credstore/backup_%i_repo_password
+Environment=RCLONE_YANDEX_HARD_DELETE=1
+ExecStart=restic forget --prune --keep-within-monthly=3m --keep-within-daily=7d

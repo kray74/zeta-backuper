@@ -1,0 +1,4 @@
+[Unit]
+Description=Remove old cloud backups
+Wants=backup-cloud-prune@alpha.service
+Wants=backup-cloud-prune@zeta.service
