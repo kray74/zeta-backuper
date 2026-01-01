@@ -1,4 +1,5 @@
 [Unit]
 Description=check restic repositories
+StopWhenUnneeded=yes
 Wants=backup-check@alpha.service
 Wants=backup-check@zeta.service

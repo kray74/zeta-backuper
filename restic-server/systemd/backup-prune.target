@@ -1,4 +1,5 @@
 [Unit]
 Description=Remove old backups
+StopWhenUnneeded=yes
 Wants=backup-prune@alpha.service
 Wants=backup-prune@zeta.service
